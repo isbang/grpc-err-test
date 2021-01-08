@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package isbang.test;
+
+option go_package = "github.com/isbang/grpc-err-test/pb";
+
+service CodeSvc {
+  rpc GetErrCode(GetErrCodeReq) returns (GetErrCodeResp);
+}
+
+message GetErrCodeReq{
+  uint32 code = 1;
+  repeated string detail_message = 2;
+}
+
+message GetErrCodeResp{}
